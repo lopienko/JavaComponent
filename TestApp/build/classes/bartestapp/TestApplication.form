@@ -10,6 +10,9 @@
     <Property name="location" type="java.awt.Point" editor="org.netbeans.beaninfo.editors.PointEditor">
       <Point value="[500, 300]"/>
     </Property>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[500, 500]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -30,64 +33,13 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="barComponent2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="324" max="32767" attributes="0"/>
-          </Group>
+          <EmptySpace min="0" pref="1839" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="barComponent2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="266" max="32767" attributes="0"/>
-          </Group>
+          <EmptySpace min="0" pref="723" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
-  <SubComponents>
-    <Component class="components.BarComponent" name="barComponent2">
-      <Properties>
-        <Property name="barDiagramBorder" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder justification="2" title="Sprzeda&#x17c; rower&#xf3;w">
-              <Font PropertyName="font" name="Segoe UI" size="12" style="1"/>
-              <Color PropertyName="color" blue="0" green="0" red="33" type="rgb"/>
-            </TitledBorder>
-          </Border>
-        </Property>
-        <Property name="barDiagramFontColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="99" type="rgb"/>
-        </Property>
-        <Property name="barValues" type="[I" editor="org.netbeans.modules.form.editors.PrimitiveTypeArrayEditor">
-          <PropertyValue value="[22, 50, 4, 78, 31, 1, 98]"/>
-        </Property>
-        <Property name="barsBorder" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-            <EtchetBorder/>
-          </Border>
-        </Property>
-        <Property name="barsColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="ff" type="rgb"/>
-        </Property>
-        <Property name="barsMaxValue" type="int" value="100"/>
-        <Property name="barsNames" type="[Ljava.lang.String;" editor="org.netbeans.beaninfo.editors.StringArrayEditor">
-          <StringArray count="7">
-            <StringItem index="0" value="Poniedzia&#x142;ek"/>
-            <StringItem index="1" value="Wtorek"/>
-            <StringItem index="2" value="&#x15a;roda"/>
-            <StringItem index="3" value="Czwartek"/>
-            <StringItem index="4" value="Pi&#x105;tek"/>
-            <StringItem index="5" value="Sobota"/>
-            <StringItem index="6" value="Niedziela"/>
-          </StringArray>
-        </Property>
-        <Property name="barsNumber" type="int" value="7"/>
-        <Property name="isBarValueShown" type="boolean" value="true"/>
-        <Property name="isReady" type="boolean" value="true"/>
-      </Properties>
-    </Component>
-  </SubComponents>
 </Form>

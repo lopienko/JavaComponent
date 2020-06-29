@@ -1,17 +1,21 @@
 //Bar Diagram Component
 //Programowanie Komponentowe
 //Krystian Deresz U-14655
-//Adam Pawlik U-14821
+//Adam Pawlik   U-14821
 //Informatyka, sem. VI
 //Studia stacjonarne
-
 package components;
  
 import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.*;
 import javax.swing.border.*;
+import java.awt.event.ComponentListener;
 
-public class BarComponent extends JPanel {
+public class BarComponent extends JPanel implements ComponentListener {
    
    //Properties
    private int barsNumber;
@@ -122,7 +126,6 @@ public class BarComponent extends JPanel {
         barPanels = new JPanel[barsNumber];
         progressBars = new JProgressBar[barsNumber];
         barsLabels = new JLabel[barsNumber];
-        
        
          for(int i=0; i<barPanels.length; i++)
          {
@@ -133,7 +136,17 @@ public class BarComponent extends JPanel {
                         //Bars
                         progressBars[i] = new JProgressBar(0,100);
                         progressBars[i].setOrientation(SwingConstants.VERTICAL);
-                       
+                        progressBars[i].addMouseListener(new MouseAdapter() {
+                            public void mouseClicked(MouseEvent e){
+                                Object source = e.getSource();
+                                for(int i = 0; i<barsNumber; i++){
+                                if(source==progressBars[i]){
+                                Color pickedColor = JColorChooser.showDialog(null, "Wybierz kolor słupka", barsColor);
+                                progressBars[i].setForeground(pickedColor);
+                                }
+                            }
+                        }
+                    });
                         
                         //Adding all components to sub-panels
                         barPanels[i].add(progressBars[i], BorderLayout.CENTER);
@@ -143,6 +156,9 @@ public class BarComponent extends JPanel {
                        
                         //Adding sub-panels to main container
                         mainPanel.add(barPanels[i]);
+                        
+                        //LISTENER DO SKALOWANIA CAŁEGO MAINPANELU (KOMPONENTU W SUMIE)
+                        mainPanel.addComponentListener(this);
          }
          infoPanel.add(minLabel);
          infoPanel.add(maxLabel);
@@ -214,5 +230,37 @@ public class BarComponent extends JPanel {
             if(isBarValueShown)
             progressBars[i].setString(String.valueOf(progressBars[i].getValue()));
         }
+    }
+
+    //MATEUSZ TUTAJ RESIZE
+    @Override
+    public void componentResized(ComponentEvent e) {
+        for(int i=0; i<barsNumber; i++){
+            //TUTAJ TRZEBA WYMYŚLIĆ LICZBY KTÓRE BĘDĄ DOBRZE DZIAŁAĆ PRZY SKALOWANIU
+            barPanels[i].setPreferredSize(new Dimension((mainPanel.getWidth()/barsNumber)-20, mainPanel.getHeight()-20));
+            progressBars[i].setPreferredSize(new Dimension(barPanels[i].getWidth()-10, barPanels[i].getHeight()-30));
+            barsLabels[i].setPreferredSize(new Dimension(barPanels[i].getWidth()-10, barPanels[i].getHeight()-200));
+            
+            //TE DWIE LINIE WAZNE W CHUJ
+            mainPanel.revalidate();
+            mainPanel.repaint();
+            }
+    }
+
+    
+    //TE TRZY NIEWAŻNE CICHO
+    @Override
+    public void componentMoved(ComponentEvent e) {
+        
+    }
+
+    @Override
+    public void componentShown(ComponentEvent e) {
+        
+    }
+
+    @Override
+    public void componentHidden(ComponentEvent e) {
+        
     }
 }
