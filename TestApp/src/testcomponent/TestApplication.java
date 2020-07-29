@@ -1,9 +1,3 @@
-//Bar Diagram Test Application
-//Programowanie Komponentowe
-//Krystian Deresz U-14655
-//Adam Pawlik   U-14821
-//Informatyka, sem. VI
-//Studia stacjonarne
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -33,33 +27,51 @@ public class TestApplication extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        barComponent1 = new komponent.BarComponent();
+        jButton1 = new javax.swing.JButton();
+        barComponent2 = new komponent.BarComponent();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 458, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(40, Short.MAX_VALUE)
-                    .addComponent(barComponent1, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 515, Short.MAX_VALUE)
+                .addComponent(jButton1))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(barComponent2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(27, Short.MAX_VALUE)
-                    .addComponent(barComponent1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(barComponent2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        int[] wart = new int[barComponent2.getBarCount()];
+        for (int i = 0; i<wart.length; i++){
+            wart[i] = i*10;
+        }
+        barComponent2.setBarValues(wart);
+        barComponent2.setIsBarValueShown(false);
+        barComponent2.setIsBarValueShown(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,8 +107,15 @@ public class TestApplication extends javax.swing.JFrame {
             }
         });
     }
-
+ // Variables declaration - do not modify                     
+   
+    private komponent.BarComponent barComponent3;
+  
+    private javax.swing.JToolBar jToolBar1;
+    
+    // End of variables declaration                   
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private komponent.BarComponent barComponent1;
+    private komponent.BarComponent barComponent2;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

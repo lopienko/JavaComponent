@@ -1,9 +1,7 @@
-//Bar Diagram Component 
-//Programowanie Komponentowe
-//Krystian Deresz U-14655
-//Adam Pawlik   U-14821
-//Informatyka, sem. VI
-//Studia stacjonarne
+//Bar Diagram Component
+//Krystain Deresz u-14655
+//Adam Pawlik u -14821
+
 package komponent;
  
 import java.awt.*;
